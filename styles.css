@@ -1,0 +1,23 @@
+:root{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    height: 5rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 1px hidden;
+    box-shadow: 0 8px 8px -4px lightgray;
+}
+.heading{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.button{
+    margin: 0 auto;
+    border: 1px hidden;
+    border-radius: 10%;
+    font-size: 2rem;
+}
