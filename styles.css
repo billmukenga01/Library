@@ -98,7 +98,9 @@ nav > *{
     border: 1px solid black;
 }
 .display-container{
-   overflow-y: scroll;
+    display: grid;
+    overflow-y: scroll;
+
 }
 .header{
     font-size: 3rem;
