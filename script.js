@@ -1,10 +1,12 @@
-const container = document.querySelector('container');
+const container = document.querySelector('.display-container');
+const head = document.querySelector('head');
 
 let myLibrary = [];
 
-let title = 'The River and the Source';
-let year = '1973';
-let author = 'Akoko';
+let title = 'to be set to the value of a form input';
+let year = 'to be set to the value of a form input';
+let author = 'to be set to the value of a form input';
+let length;
 
 
 function Book(title, yearOfPublish, author) {
@@ -23,10 +25,22 @@ function addBookToLibrary() {
   const book = new Book(title, year, author);
   myLibrary.push(book);
 
+  length = myLibrary.length;
+
+  const style = document.createElement('style');
+
+  style.textContent = `
+    grid-template-columns: ${length};
+    
+  `
+  head.appendChild(style)
+  
+  loop();
 }
 
-function loop (){
 
+
+function loop (){
 
   myLibrary.forEach(element => {
 
@@ -36,3 +50,7 @@ function loop (){
       
   });
 }
+
+addBookToLibrary();
+
+console.log(myLibrary)
