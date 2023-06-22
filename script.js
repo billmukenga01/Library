@@ -1,5 +1,6 @@
 const container = document.querySelector('.display-container');
 const head = document.querySelector('head');
+const button = document.querySelector('.button');
 
 let myLibrary = [];
 
@@ -7,7 +8,16 @@ let title = 'to be set to the value of a form input';
 let year = 'to be set to the value of a form input';
 let author = 'to be set to the value of a form input';
 let length;
+let index;
 
+button.addEventListener('click', function(){
+
+  title = prompt('Enter Title of Book');
+  year = prompt('Enter the Publication Year');
+  title = prompt('Enter the Author of the book');
+
+  addBookToLibrary()
+})
 
 function Book(title, yearOfPublish, author) {
   // the constructor...
@@ -27,6 +37,7 @@ function addBookToLibrary() {
 
   length = myLibrary.length;
 
+  index = myLibrary.indexOf(Book);
   const style = document.createElement('style');
 
   style.textContent = `
@@ -35,22 +46,19 @@ function addBookToLibrary() {
   `
   head.appendChild(style)
   
-  loop();
+  loop(index);
 }
 
 
 
-function loop (){
+function loop (index){
 
-  myLibrary.forEach(element => {
-
-    const newDiv = document.createElement('div');
-    newDiv.setAttribute('class', 'card-item');
-    container.appendChild(newDiv);
+  const newDiv = document.createElement('div');
+  newDiv.setAttribute('class', 'card-item');
+  container.appendChild(newDiv);
       
-  });
 }
 
-addBookToLibrary();
 
-console.log(myLibrary)
+
+// console.log(myLibrary)

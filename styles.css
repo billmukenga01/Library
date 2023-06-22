@@ -57,6 +57,9 @@ body{
     align-items: center;
 }
 footer{
+    position: absolute;
+    bottom:0;
+    padding: 20px;
     margin-top: 70px;
     font-size: 2.5rem;
 }
@@ -93,13 +96,14 @@ nav > *{
 }
 .container{
     /* margin:0 auto; */
+    overflow-y: scroll;
     width:80%;
     height: 50vh;
     border: 1px solid black;
 }
 .display-container{
     display: grid;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 
 }
 .header{
