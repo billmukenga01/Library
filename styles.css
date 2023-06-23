@@ -134,3 +134,6 @@ nav > *{
     text-align: center;
     font-size: 2rem;    
 }
+.display{
+    font-weight: bold;
+}
