@@ -4,6 +4,7 @@ const button = document.querySelector('.button');
 
 let myLibrary = [];
 
+
 let title = 'to be set to the value of a form input';
 let year = 'to be set to the value of a form input';
 let author = 'to be set to the value of a form input';
@@ -15,39 +16,40 @@ button.addEventListener('click', function(){
   title = prompt('Enter Title of Book');
   year = prompt('Enter the Publication Year');
   author = prompt('Enter the Author of the book');
-
-  addBookToLibrary()
-})
-
-function Book(title, yearOfPublish, author) {
-  // the constructor...
-
-  this.title = title;
-  this.yearOfPublish = yearOfPublish;
-  this.author = author;
-
-}
-
-Book.prototype.addBookToLibrary = addBookToLibrary;
-
-function addBookToLibrary() {
-  // do stuff here
   const book = new Book(title, year, author);
-  myLibrary.push(book);
 
-  length = myLibrary.length;
+  book.addBookToLibrary();
+})
+class Book{
+  constructor (title, yearOfPublish, author) {
+    // the constructor...
 
-  index = myLibrary.indexOf(book);
-  const style = document.createElement('style');
+    this.title = title;
+    this.yearOfPublish = yearOfPublish;
+    this.author = author;
 
-  style.textContent = `
-    grid-template-columns: ${length};
+  }
+  addBookToLibrary() {
+    // do stuff here
     
-  `
-  head.appendChild(style)
+    myLibrary.push(this);
   
-  loop(index);
+    length = myLibrary.length;
+  
+    index = myLibrary.indexOf(this);
+    const style = document.createElement('style');
+  
+    style.textContent = `
+      grid-template-columns: ${length};
+      
+    `
+    head.appendChild(style)
+    
+    loop(index);
+  }
 }
+
+
 
 
 
